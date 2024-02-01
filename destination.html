@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#" />
+    <base href=".">
+    <link rel="stylesheet" href="style.css">
+    <script src="./javascript/dest.js"></script>
+    <title>TEST: Destinations</title>
+</head>
+<body>
+    <div id="content">
+        <div id="sim">
+            <a href="index.html"><button class="reg btn grn">Return to Set Up</button></a>
+            <h1>Select Your Destination</h1>
+            <p>Click on the "X" at one of the five marked ending points:</p>
+            <div id="img" style="position: relative;">
+                <img id="image" style="width: 100%;" src="./imgs/dests2.png" usemap="#endmap" alt="map of mexican coast">
+                <div id="g" class="point"><p class="x2">X</p></div>
+                <div id="s" class="point"><p class="x2">X</p></div>
+                <div id="i" class="point"><p class="x2">X</p></div>
+                <div id="m" class="point"><p class="x2">X</p></div>
+                <div id="v" class="point"><p class="x2">X</p></div>
+                <div id="g2" class="label"><p style="font-size: 8pt;">Guerrero Negro Lagoon</p></div>
+                <div id="s2" class="label"><p style="font-size: 8pt;">Scammon's Lagoon</p></div>
+                <div id="i2" class="label"><p style="font-size: 8pt;">San Ignacio Lagoon</p></div>
+                <div id="m2" class="label"><p style="font-size: 8pt;">Magdalena Bay</p></div>
+                <div id="v2" class="label"><p style="font-size: 8pt;">Vavaros, Sonora</p></div>
+                <div id="gue" class="point_info">
+                    <p>Guerrero Negro Lagoon</p>
+                    <p>
+                        <img src="./imgs/route.PNG" alt="test" style="width: 100px;">
+                        &#60 test image
+                    </p>
+                </div>
+                <div id="sca" class="point_info"><p>Scammon's Lagoon</p></div>
+                <div id="ign" class="point_info"><p>San Ignacio Lagoon</p></div>
+                <div id="mag" class="point_info"><p>Magdalena Bay</p></div>
+                <div id="vav" class="point_info"><p>Vavaros, Sonora</p></div>
+                <map name="endmap">
+                    <area shape="rect" coords="160,50,170,60" target="_blank" id="guerrero">
+                    <area shape="rect" coords="170,70,180,80" target="_blank" id="scammon">
+                    <area shape="rect" coords="190,100,200,110" target="_blank" id="ignacio">
+                    <area shape="rect" coords="220,145,230,155" target="_blank" id="magdalena">
+                    <area shape="rect" coords="280,160,290,170" target="_blank" id="vavaros">
+                </map>
+            </div>
+            <a href="destInfo.html"><button class="reg btn blu">About the Destinations...</button></a>
+        </div>
+    </div>
+</body>
+</html>

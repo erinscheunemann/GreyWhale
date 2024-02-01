@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#" />
+    <base href=".">
+    <link rel="stylesheet" href="style.css">
+    <script src="./javascript/startPoint.js"></script>
+    <title>TEST: Starting Points</title>
+</head>
+<body>
+    <div id="content">
+        <div id="sim">
+            <a href="index.html"><button class="reg btn grn">Return to Set Up</button></a>
+            <h1>Select Your Starting Point</h1>
+            <p>Click on the "X" at one of the three marked starting points.</p>
+            <div id="img" style="position: relative;">
+                <img id="image" style="width: 100%;" src="./imgs/start2.png" usemap="#startmap" alt="black and white diagram of alaska with x's at the siberian coast, chukchi sea, and point barrow.">
+                <div id="s" class="point"><p class="x2">X</p></div>
+                <div id="c" class="point"><p class="x2">X</p></div>
+                <div id="b" class="point"><p class="x2">X</p></div>
+                <div id="s2" class="label"><p style="font-size: 8pt;">Siberian Coast</p></div>
+                <div id="c2" class="label"><p style="font-size: 8pt;">Chukchi Sea</p></div>
+                <div id="b2" class="label"><p style="font-size: 8pt;">Point Barrow</p></div>
+                <div id="sib" class="point_info"><p>Siberian</p></div>
+                <div id="chu" class="point_info"><p>Chukchi</p></div>
+                <div id="bar" class="point_info"><p>Barrow</p></div>
+                <map name="startmap">
+                    <area shape="rect" coords="105,5,115,25" target="_blank" id="siberian">
+                    <area shape="rect" coords="140,20,160,35" target="_blank" id="chukchi">
+                    <area shape="rect" coords="210,5,230,25" target="_blank" id="barrow">
+                </map>
+            </div>
+            <a href="startInfo.html"><button class="reg btn blu">About the Starting Points...</button></a>
+        </div>
+    </div>
+</body>
+</html>

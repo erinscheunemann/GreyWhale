@@ -1,0 +1,9 @@
+{
+    "pages": [
+    {"first": {
+        "content": "<p>Testing something new</p><button name=\"second\" onClick=\"load(this)\">second</button>"
+    }},
+    {"second": {
+        "content": "<p>hello I am under the water</p>"
+    }}]
+}

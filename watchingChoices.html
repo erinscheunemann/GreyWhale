@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#" />
+    <base href=".">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./javascript/watchingChoices.js"></script>
+    <title>TEST: Whale Watching Choices</title>
+</head>
+<body>
+    <div id="content">
+        <div id="sim">
+            <h1>Choices Made by Boat Operators</h1>
+            <p class="info">
+                Commercial and private boats are often used to watch migrating whales. 
+                The choices boat operators make determine the likelihood of harassment. 
+                Make some choices about the whale watchers that approach your whale.
+            </p>
+            <div id="afirst" style="display: none;">
+                <p id="a1c">Stay 100 yards away and off to the side</p>
+                <p id="a1w">Move in closer than 100 yards to get a better picture</p>
+            </div>
+            <div id="asecond" style="display: none;">
+                <p id="a2w">Move in closer than 100 yards to get a better picture</p>
+                <p id="a2c">Stay 100 yards away and off to the side</p>
+            </div>
+            <div id="bfirst" style="display: none;">
+                <p id="b1c">Approach whales at a speed no faster than the slowest whale</p>
+                <p id="b1w">Approach whales at a speed faster than the slowest whale</p>
+            </div>
+            <div id="bsecond" style="display: none;">
+                <p id="b2w">Approach whales at a speed faster than the slowest whale</p>
+                <p id="b2c">Approach whales at a speed no faster than the slowest whale</p>
+            </div>
+            <div id="cfirst" style="display: none;">
+                <p id="c1c">Do not make any sudden changes in speed or direction</p>
+                <p id="c1w">Make sudden changes in direction or speed to startle the whales</p>
+            </div>
+            <div id="csecond" style="display: none;">
+                <p id="c2w">Make sudden changes in direction or speed to startle the whales</p>
+                <p id="c2c">Do not make any sudden changes in speed or direction</p>
+            </div>
+            <span id="fSpan"><button id="fin" class="reg btn grn">Finished</button></span>
+            <span id="cs" style="display: none;"><a href="swim.html"><button class="reg btn grn">Continue Swimming?</button></a></span>
+            <a href="whaleWatchingGuidelines.html"><button class="reg btn blu">Whale Watching Guidelines</button></a>
+        </div>
+    </div>
+</body>
+</html>

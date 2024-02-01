@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#" />
+    <base href=".">
+    <link rel="stylesheet" href="style.css">
+    <script src="./javascript/result.js"></script>
+    <title>TEST: results</title>
+</head>
+<body>
+    <div id="content">
+        <div id="sim">
+            <div id="success" style="display: none;">
+                <h1>Congratulatuins! You've Made It.</h1>
+                <p>
+                    You've swum over 11,000 kilometers. You've faced storms, 
+                    killer whales and other hazards. Now, you've entered the 
+                    glassy calm of the lagoon. Your journey is over, for now...
+                </p>
+            </div>
+            <div id="pass" style="display: none;">
+                <h1>Sorry, You Didn't Make It</h1>
+                <p>
+                    Your California gray whale must make it to the lagoons within 90
+                     days to be successful in this simulation. Take heart, however, 
+                     in reality, grey whales have given birth all along the migration
+                      route. So, while other places aren't as hospitable as the lagoons, 
+                      they may do in a pinch!
+                </p>
+            </div>
+            <div id="death" style="display: none;">
+                <h1>You Have Been Killed</h1>
+                <p>
+                    We estimate that grey whales are attacked by killer whales 
+                    in 20 percent of their encounters. Killer whales are 
+                    successful in 33 percent of their attacks.
+                </p>
+                <p>You have not survived your migration. You can start again or quit.</p>
+            </div>
+            <div id="netDeath" style="display: none;">
+                <h1>You Have Suffocated</h1>
+                <p>
+                    Your grey whale was unable to escape the fishing net in 
+                    time and suffocated. 
+                </p>
+                <p>You have not survived your migration. You can start again or quit.</p>
+            </div>
+            <div id="boatDeath" style="display: none;">
+                <h1>You Have Been Hit</h1>
+                <p>
+                    Your grey whale was hit by the boat and died. 
+                </p>
+                <p>You have not survived your migration. You can start again or quit.</p>
+            </div>
+            <div id="tourDeath" style="display: none;">
+                <h1>You Have Spent too Long on your Detour</h1>
+                <p>
+                    In your quest to find nutrients on your way too your destination, you spent a little too much time 
+                    living the lush, or in your case not so lush, life in your choosen detour and have subsequently passed away. 
+                </p>
+                <p>You have not survived your migration. You can start again or quit.</p>
+            </div>
+            <a href="index.html"><button id="restart" class="lrg btn grn">Begin a New Migration</button></a>
+            <a><button id="quit" class="lrg btn grn">Quit Electronic Whale</button></a>
+        </div>
+    </div>
+</body>
+</html>

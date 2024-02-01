@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1.0, initial-scale=1.0">
+    <link rel="shortcut icon" href="#" />
+    <base href=".">
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="./javascript/speed.js"></script>
+    <title>TEST: Speed Selection</title>
+</head>
+<body>
+    <div id="content">
+        <div id="sim">
+            <span><button id="home" class="reg btn grn">Return to Set Up</button></span>
+            <h1>Select Swimming Speed</h1>
+            <img src="./imgs/swim.PNG" alt="whale diving">
+            <div style="position: relative; bottom: 100px;">
+                <h3>First:</h3>
+                <p style="font-size: small;"><em>Please round all numbers to the tenths place.</em></p>
+                <label for="fsd">Select duration of first shallow dive <span style="font-size: small;">(1.0 - 2.0 minutes)</span>:</label>
+                <input type="number" min="1" max="2" step="0.1" value="1.0" id="fsd" name="fsd"><br>
+                <label for="ssd">Select duration of second shallow dive <span style="font-size: small;">(1.0 - 2.0 minutes)</span>:</label>
+                <input type="number" min="1" max="2" step="0.1" value="1.0" id="ssd" name="ssd"><br>
+                <label for="tdd">Select duration of third deep dive <span style="font-size: small;">(6.0 - 8.0 minutes)</span>:</label>
+                <input type="number" min="6" max="8" step="0.1" value="6.0" id="tdd" name="tdd"><br>
+            </div>
+            <h3>Then:</h3>
+            <p style="font-size: small;"><em>Please round all numbers to the tenths place.</em></p>
+            <table>
+                <tr>
+                    <td>
+                        <label for="total">Calculate the total time for the swimming/dive cycle:</label>
+                        <input type="number" min="0" max="10" step="0.1" id="total" name="total">    
+                    </td>
+                    <td>
+                        <div id="thb">
+                            <button id="tHint" class="reg btn blu">Hint</button>
+                        </div>
+                        <div id="tht" style="display: none;">
+                            <p>Add the durations of all the dives together!</p>
+                            <p>The total duration is 
+                                <input type="number" min="1" max="2" step="0.1" id="f" name="f">
+                                    plus 
+                                <input type="number" min="1" max="2" step="0.1" id="s" name="s">
+                                    plus 
+                                <input type="number" min="6" max="8" step="0.1" id="t" name="t">
+                            </p>
+                            <button id="htHint" class="reg btn grn">Hide Hint</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="cycles">Calculate the number of cycles in one hour:</label>
+                        <input type="number" min="0" max="10" step="0.1" id="cycles" name="cycles">            
+                    </td>
+                    <td>
+                        <div id="chb">
+                            <button id="cHint" class="reg btn blu">Hint</button>
+                        </div>
+                        <div id="cht" style="display: none;">
+                            <p>Divde 60 by the total amount of minutes each cycle takes!</p>
+                            <p>The number of cycles is 60 divided by 
+                                <input type="number" min="8" max="12" step="0.1" id="tc" name="tc">
+                            </p>
+                            <button id="hcHint" class="reg btn grn">Hide Hint</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>The whale swims 1.5 kilometers per cycle.</p>
+                        <label for="kmph">Calculate the number of kilometers per hour:</label>
+                        <input type="number" min="0" max="10" step="0.1" id="kmph" name="kmph">
+                    </td>
+                    <td id="kmh">
+                        <div id="khb">
+                            <button id="kHint" class="reg btn blu">Hint</button>
+                        </div>
+                        <div id="kht" style="display: none;">
+                            <p>The speed of the whale is 1.5km times the amount of cycles in an hour!</p>
+                            <p>The speed of the whale in KM per HR is 1.5 times 
+                                <input type="number" min="4" max="8" step="0.1" id="kph" name="kph">
+                            </p>
+                            <button id="hkHint" class="reg btn grn">Hide Hint</button>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <span><a href="speedInfo.html"><button id="speedInfo" class="reg btn blu">About Swimming Speed...</button></a></span>
+        </div>
+    </div>
+</body>
+</html>

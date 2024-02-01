@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1.0, initial-scale=1.0">
+    <link rel="shortcut icon" href="#" />
+    <base href=".">
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="./javascript/storm.js"></script>
+    <title>TEST: Storm Encounter</title>
+</head>
+<body>
+    <div id="content">
+        <div id="sim">
+            <div id="storm">
+                <h1>Storm Encounter</h1>
+                <div id="stormInfo">
+                    <p>You have encountered a storm! Click the button below to find out how severe the storm will be.</p>
+                    <button id="stormBtn" class="reg btn blu">Click for Storm</button>
+                </div>
+                <div id="stormRoll" style="display: none;">
+                    <p>The storm you encountered was a <strong><span id="bfn"></span></strong> on the Beaufort Wind Scale!</p>
+                    <p>The storm you encountered had a windspeed of <strong><span id="ws"></span>MPH</strong> and its effects can be described as <strong><span id="bfd"></span></strong></p>
+                    <p>This means that you <strong>lost <span id="daysLost"></span> day(s)</strong> <span id="speedLost"></span> on your journey!</p>                   
+                </div>
+                <button id="fin" class="reg btn grn">Finished</button>
+                <button id="bfws" class="reg btn blu">Beaufort Wind Scale</button>
+            </div>
+            <div id="beaufort" style="display: none;">
+                <h3>The Weather Factor: Beaufort Wind Scale</h3>
+                <h4>(For estimating wind speed)</h4>
+                <table>
+                    <tr>
+                        <th>Beaufort Number</th>
+                        <th>MPH</th>
+                        <th>Knots</th>
+                        <th>Name</th>
+                        <th>Description of Effects</th>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>0-1</td>
+                        <td>0-1</td>
+                        <td>calm</td>
+                        <td>smoke rises vertically</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>1-4</td>
+                        <td>1-3</td>
+                        <td>light</td>
+                        <td>airsmoke drifts, tree leaves move</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>5-8</td>
+                        <td>4-7</td>
+                        <td>slight breeze</td>
+                        <td>leaves rustle, wind can be felt</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>9-14</td>
+                        <td>8-12</td>
+                        <td>gentle breeze</td>
+                        <td>leaves and twigs in motion</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>15-20</td>
+                        <td>13-17</td>
+                        <td>moderate breeze</td>
+                        <td>small branches move</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>21-25</td>
+                        <td>18-22</td>
+                        <td>fresh breeze</td>
+                        <td>small trees with leaves sway</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>26-31</td>
+                        <td>23-27</td>
+                        <td>strong breeze</td>
+                        <td>wind whistles, large branches move</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>32-37</td>
+                        <td>28-32</td>
+                        <td>moderate gale</td>
+                        <td>whole trees move, difficult to walk</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>38-43</td>
+                        <td>33-37</td>
+                        <td>fresh gale</td>
+                        <td>twigs break off of trees</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>44-49</td>
+                        <td>38-42</td>
+                        <td>gale</td>
+                        <td>branches break, some damage to roots</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>50-54</td>
+                        <td>43-47</td>
+                        <td>strong gale</td>
+                        <td>trees uprooted, heavy building damage</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>55-60</td>
+                        <td>48-52</td>
+                        <td>whole gale</td>
+                        <td>considerable damage</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>61-66</td>
+                        <td>53-57</td>
+                        <td>moderate storm</td>
+                        <td>widespread damage</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>67-71</td>
+                        <td>58-62</td>
+                        <td>storm</td>
+                        <td>very rarely experienced</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>72+</td>
+                        <td>63+</td>
+                        <td>hurricane</td>
+                        <td>severe damage</td>
+                    </tr>
+                </table>
+                <button id="s" class="reg btn grn">Go Back to Storm...</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

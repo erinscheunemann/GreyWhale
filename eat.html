@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1.0, initial-scale=1.0">
+    <link rel="shortcut icon" href="#" />
+    <base href=".">
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="./javascript/eating.js"></script>
+    <title>TEST: eating information</title>
+</head>
+<body>
+    <div id="content">
+        <div id="sim">
+            <h1>Eat For the Journey</h1>
+            <table>
+                <tr>
+                    <td>
+                        <div class="info">
+                            <p>Gray whales eat very little during their migration. All of the energy they use on the swim comes from stored food.</p>
+                            <p>You have taken four days to feed and increase your energy stores.</p>
+                            <p>As a result, your speed has been increased by 0.5 kilometers per hour.</p>
+                            <p id="info"></p>
+                            <div id="continue">
+                                <span><button id="ce" class="reg btn grn">Continue Eating?</button></span><br>
+                                <a href="swim.html"><button id="fin" class="reg btn grn">Start the Journey?</button></a>
+                            </div>
+                            <div id="stop" style="display: none;">
+                                <p>You have maxxed out the speed of your whale at 12 KPMH.</p>
+                                <a href="swim.html"><button id="fin" class="reg btn grn">Start the Journey</button></a>
+                            </div>
+                            
+                        </div>
+                    </td>
+                    <td>
+                        <img src="./imgs/feed.PNG" alt="whale swimming">
+                    </td>
+                </tr>
+            </table>
+            <a href="feedinfo1.html"><button class="reg btn blu">About Feeding...</button></a>
+        </div>
+    </div>
+</body>
+</html>
