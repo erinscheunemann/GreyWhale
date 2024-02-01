@@ -56,12 +56,22 @@ window.addEventListener('load', function() {
         let totalDistance = Number(sessionStorage.getItem('distance')); // total journy distance
         let percentKMTraveled = Math.round(distance/totalDistance*100); // percent distance traveled
         let percentDaysTraveled = Math.round(days/90*100); // percent of 90 day journy made
-        daysProg.style.width = percentDaysTraveled + "%"; // change width of prog bar 
+        daysProg.style.width = percentDaysTraveled + "%"; // change width of prog bar
+        daysProg.style.backgroundColor = hsl_col_perc(percentDaysTraveled, 100, 0); 
         distanceProg.style.width = percentKMTraveled + "%";
+        distanceProg.style.backgroundColor = hsl_col_perc(percentKMTraveled, 0, 100);
         daysText.innerHTML = percentDaysTraveled + "%"; // change text to match progress
         distanceText.innerHTML = percentKMTraveled + "%";
         final.innerHTML = totalDistance + " KM"; // change end KM in case of route decisions
     }
+
+    function hsl_col_perc(percent, start, end) { // from https://stackoverflow.com/questions/7128675/from-green-to-red-color-depend-on-percentage
+        let a = percent / 100;
+        let b = (end - start) * a;
+        let c = b + start;
+        // Return a CSS HSL string
+        return 'hsl('+c+', 100%, 50%)';
+      }
 
 
 
@@ -71,9 +81,8 @@ window.addEventListener('load', function() {
         let totalTraveled = Number(sessionStorage.getItem('disTraveled'));
         let distance = Number(sessionStorage.getItem('distance'));
         let routeDecided = Number(sessionStorage.getItem('routeDecided'));
-        let detour = Number(sessionStorage.getItem('detour'));
         // check if journey is OVER
-        if(totalTraveled >= distance) { // traveled the distance
+        if(totalTraveled >= distance && days <= 90) { // traveled the distance
             sessionStorage.setItem('outcome', 's'); // set outcome to success 
             window.location.replace('result.html');
         } else if (days >= 90) { // traveled more than 90 days
@@ -85,11 +94,6 @@ window.addEventListener('load', function() {
             sessionStorage.setItem('routeDecided', 1);
             window.location.replace('channel.html');
         }
-        // detour
-        if (Number(sessionStorage.getItem("dStart")) <= totalTraveled && detour == 0) {
-            sessionStorage.setItem("detour", 1);
-            window.location.replace(sessionStorage.getItem("dPage"));
-        }
 
         let diceRoll = Math.random(); // roll for event
         // events 
@@ -97,14 +101,20 @@ window.addEventListener('load', function() {
             window.location.replace('storm.html');
         } else if (diceRoll < 0.10 && totalTraveled >= 3000) { // killer whale
             window.location.replace('whaleEncounter.html');
+        } else if ((totalTraveled >= 3000 && totalTraveled < 4000) && (0.40 <= diceRoll && diceRoll < 0.50)) { // puget sound detour
+            window.location.replace('pugetsound.html');
         } else if (diceRoll >= 0.10 && diceRoll < 0.15) { // feed along migration
             window.location.replace('feed2.html');
         } else if (diceRoll >= 0.15 && diceRoll < 0.22) { // killer whale
             window.location.replace('whaleEncounter.html');
+        } else if ((totalTraveled >= 4000 && totalTraveled < 5000) && (0.40 <= diceRoll && diceRoll < 0.50)) { // san fran detour
+            window.location.replace('sanfrancisco.html');
         } else if (totalTraveled > 5000 && (0.22 <= diceRoll && diceRoll < 0.30)) { // whale watchers
             window.location.replace('whaleWatchers.html');
         } else if (totalTraveled <= 5000 && (0.22 <= diceRoll && diceRoll < 0.30)) { // fishing boats
             window.location.replace('boat.html');
+        } else if ((totalTraveled >= 5000 && totalTraveled <= 6000) && (0.40 <= diceRoll && diceRoll < 0.50)) { // los angeles detour
+            window.location.replace('losangeles.html');
         } else if (totalTraveled <= 10000 && (0.30 <= diceRoll && diceRoll < 0.40)) { // frieghters and tankers
             window.location.replace('freightersTankers.html');
         } else { // no event? SWIM
@@ -118,7 +128,7 @@ window.addEventListener('load', function() {
             sessionStorage.setItem('disTraveled', totalTraveled+kmTraveled);
             dtgSpan.innerHTML = Math.round(Number(sessionStorage.getItem('distance')) - Number(sessionStorage.getItem('disTraveled')));
             // check success 
-            if ((totalTraveled+kmTraveled) >= distance) {
+            if ((totalTraveled+kmTraveled) >= distance && days+4 <= 90) {
                 sessionStorage.setItem('outcome', 's');
                 window.location.replace('result.html');
             } else if (days+4 >= 90) {

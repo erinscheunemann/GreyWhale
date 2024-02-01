@@ -9,8 +9,7 @@ window.addEventListener('load', function (){
     btn.addEventListener('click', function() {
         // check if stuck in ice
         let diceRoll = Math.random(); // roll for event
-        console.log(diceRoll)
-        if(diceRoll < 0.25) { // stuck in ice
+        if(diceRoll < 0.25) { // 25% chance stuck in ice
             window.location.replace('ice.html'); // goto ice page
         } else { // eat
             eat();
@@ -38,7 +37,7 @@ window.addEventListener('load', function (){
         sessionStorage.setItem('kmphIncrease', kmphIncrease+increase);
         // display in paragraph
         info.innerHTML = "So far, you have taken " + (days+4) +
-                        " days to eat and have increased your speed by " + (kmphIncrease+increase) +
-                        " KMPH to " + (speed+increase) + " KMPH"
+                        " days to eat and have <strong>increased</strong> your speed by <strong>" + (kmphIncrease+increase) +
+                        " KMPH</strong> to <strong>" + (speed+increase) + " KMPH</strong>."
     }
 });

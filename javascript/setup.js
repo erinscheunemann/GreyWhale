@@ -40,22 +40,6 @@ window.addEventListener('load', function (){
                 sessionStorage.setItem("progress", 0); // percentage of the journey traveled
                 sessionStorage.setItem("disTraveled", 0); // km traveled
                 sessionStorage.setItem("routeDecided", 0); // route decision flag
-                sessionStorage.setItem("detour", 0); // detour flag
-                // detour decision
-                let diceRoll = Math.random(); // roll for detour
-                if (diceRoll < 0.33) { // 33% chance of detouring into puget sound
-                    sessionStorage.setItem("dStart", 3250); // set start of range
-                    sessionStorage.setItem("dEnd", 3750); // set end of range
-                    sessionStorage.setItem("dPage", "pugetsound.html"); // set page for detour
-                } else if (0.33 <= diceRoll < 0.66) { // 33% chance of detouring into san francisco bay
-                    sessionStorage.setItem("dStart", 4250); 
-                    sessionStorage.setItem("dEnd", 4750); 
-                    sessionStorage.setItem("dPage", "sanfrancisco.html"); 
-                } else { // 33% chance of detouring into los angeles harbor
-                    sessionStorage.setItem("dStart", 4750); 
-                    sessionStorage.setItem("dEnd", 5250); 
-                    sessionStorage.setItem("dPage", "losangeles.html"); 
-                }   
                 let start = sessionStorage.getItem('start');
                 let dest = sessionStorage.getItem('end');
                 sessionStorage.setItem("distance", 11000 + startdist.get(start) + enddist.get(dest)); // calculate distance between start and end
