@@ -1,21 +1,9 @@
 window.addEventListener('load', function (){
-    // get paragraph for information
-    let info = document.getElementById("info");
-    // get continue eating button
-    let btn = document.getElementById('ce');
-
-    btn.addEventListener('click', function() {
-        // check if stuck in ice
-        let diceRoll = Math.random(); // roll for event
-        if(diceRoll < 0.25) { // 25% chance stuck in ice
-            window.location.replace('ice.html'); // goto ice page
-        } else { // eat
-            eat();
-        }
-    });
+    // get eating button
+    let btn = document.getElementById('eat');
 
 
-    function eat() {
+    btn.addEventListener('click', function () {
         // amount speed increases by
         let increase = 0.5;
         // add speed and time taken
@@ -32,9 +20,5 @@ window.addEventListener('load', function (){
         sessionStorage.setItem('days', days+4);
         sessionStorage.setItem('kmph', speed+increase);
         sessionStorage.setItem('kmphIncrease', kmphIncrease+increase);
-        // display in paragraph
-        info.innerHTML = "So far, you have taken " + (days+4) +
-                        " days to eat and have <strong>increased</strong> your speed by <strong>" + (kmphIncrease+increase) +
-                        " KMPH</strong> to <strong>" + (speed+increase) + " KMPH</strong>."
-    }
+    });
 });

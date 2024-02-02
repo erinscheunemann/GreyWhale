@@ -102,19 +102,37 @@ window.addEventListener('load', function() {
         } else if (diceRoll < 0.10 && totalTraveled >= 3000) { // killer whale
             window.location.replace('whaleEncounter.html');
         } else if ((totalTraveled >= 3000 && totalTraveled < 4000) && (0.40 <= diceRoll && diceRoll < 0.50)) { // puget sound detour
+            let diceRoll = Math.random(); // roll for death
+            if (diceRoll <= 0.1) { // 10% chance of death
+                sessionStorage.setItem('outcome', 't'); // set outcome to tour death
+                window.location.replace('result.html'); // go to results
+            } else { // detour
             window.location.replace('pugetsound.html');
+            }
         } else if (diceRoll >= 0.10 && diceRoll < 0.15) { // feed along migration
             window.location.replace('feed2.html');
         } else if (diceRoll >= 0.15 && diceRoll < 0.22) { // killer whale
             window.location.replace('whaleEncounter.html');
         } else if ((totalTraveled >= 4000 && totalTraveled < 5000) && (0.40 <= diceRoll && diceRoll < 0.50)) { // san fran detour
+            let diceRoll = Math.random(); // roll for death
+            if (diceRoll <= 0.1) { // 10% chance of death
+                sessionStorage.setItem('outcome', 't'); // set outcome to tour death
+                window.location.replace('result.html'); // go to results
+            } else { // detour
             window.location.replace('sanfrancisco.html');
+            }
         } else if (totalTraveled > 5000 && (0.22 <= diceRoll && diceRoll < 0.30)) { // whale watchers
             window.location.replace('whaleWatchers.html');
         } else if (totalTraveled <= 5000 && (0.22 <= diceRoll && diceRoll < 0.30)) { // fishing boats
             window.location.replace('boat.html');
         } else if ((totalTraveled >= 5000 && totalTraveled <= 6000) && (0.40 <= diceRoll && diceRoll < 0.50)) { // los angeles detour
+            let diceRoll = Math.random(); // roll for death
+            if (diceRoll <= 0.1) { // 10% chance of death
+                sessionStorage.setItem('outcome', 't'); // set outcome to tour death
+                window.location.replace('result.html'); // go to results
+            } else { // detour
             window.location.replace('losangeles.html');
+            }
         } else if (totalTraveled <= 10000 && (0.30 <= diceRoll && diceRoll < 0.40)) { // frieghters and tankers
             window.location.replace('freightersTankers.html');
         } else { // no event? SWIM

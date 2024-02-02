@@ -16,15 +16,9 @@ window.addEventListener('load', function() {
     inc.innerHTML = increase;
 
     btn.addEventListener('click', function() {
-        let diceRoll = Math.random(); // roll for death
-        if (diceRoll <= 0.1) { // 10% chance of death
-            sessionStorage.setItem('outcome', 't'); // set outcome to net death
-            window.location.replace('result.html'); // go to results
-        } else { // continue
-            // increase speed and lose 2 weeks of time
-            sessionStorage.setItem("kmph", speed + increase);
-            sessionStorage.setItem("days", days + 14);
-            window.location.replace('swim.html');
-        }
+        // increase speed and lose 2 weeks of time
+        sessionStorage.setItem("kmph", speed + increase);
+        sessionStorage.setItem("days", days + 14);
+        window.location.replace('swim.html');
     });
 });
