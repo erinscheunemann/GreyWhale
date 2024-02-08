@@ -7,7 +7,7 @@ window.addEventListener('load', function (){
     btn.addEventListener('click', function() {
         // check if stuck in ice
         let diceRoll = Math.random(); // roll for event
-        if(diceRoll < 0.25) { // 25% chance stuck in ice
+        if(diceRoll < 0.10) { // 10% chance stuck in ice
             window.location.replace('ice.html'); // goto ice page
         } else { // eat
             eat();

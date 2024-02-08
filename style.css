@@ -133,6 +133,7 @@ button {
     display: none; 
     background-color: aliceblue;
     border: black 1px solid;
+    padding: 10px;
 }
 
 

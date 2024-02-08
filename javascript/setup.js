@@ -8,7 +8,7 @@ window.addEventListener('load', function (){
     let startdist = new Map([['siberian', 50], ['chukchi',0], ['barrow',100]]);
     let enddist = new Map([['guerrero',0], ['scammon',50], ['ignacio',100], ['magdalena',175], ['vavaros',250]]);
     // map to hold extended names of places 
-    let names = new Map([['siberian', 'Siberian Coast'], ['chukchi','Chukchi Sea'], ['barrow','Point Barrow'], ['guerrero','Guerro Negro Lagoon'], ['scammon','Scammon\'s Lagoon'], ['ignacio','San Ignacio Lagoon'], ['magdalena','Magdalena Bay'], ['vavaros','Vavaros, Sonora']])
+    let names = new Map([['siberian', 'Siberian Coast'], ['chukchi','Chukchi Sea'], ['barrow','Point Barrow'], ['guerrero','Guerro Negro Lagoon'], ['scammon','Scammon\'s Lagoon'], ['ignacio','San Ignacio Lagoon'], ['magdalena','Magdalena Bay'], ['vavaros','Yavaros, Sonora']])
 
     if (sessionStorage.getItem("start") != null) { // start point has been selected
         let s = sessionStorage.getItem("start");
