@@ -180,3 +180,8 @@ button {
 .reg {
     padding: 5px 15px;
 }
+
+.right {
+    display: flex;
+    justify-content: right;
+}

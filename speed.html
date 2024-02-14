@@ -12,8 +12,12 @@
 <body>
     <div id="content">
         <div id="sim">
-            <span><button id="home" class="reg btn grn">Return to Set Up</button></span>
             <h1>Select Swimming Speed</h1>
+            <p>
+                Swimming gray whales use a combination of shallow and deep
+                dives. Usually three to five shallow dives are followed by a deep dive. Shallow dives are one to two minutes long. Deep dives are
+                usually three to eight minutes long.
+            </p>
             <img src="./imgs/swim.PNG" alt="whale diving">
             <div style="position: relative; bottom: 100px;">
                 <h3>First:</h3>
@@ -39,7 +43,7 @@
                         </div>
                         <div id="tht" style="display: none;">
                             <p>Add the durations of all the dives together!</p>
-                            <p>The total duration is 
+                            <p>For my whale, the total duration is 
                                 <input type="number" min="1" max="2" step="0.1" id="f" name="f">
                                     plus 
                                 <input type="number" min="1" max="2" step="0.1" id="s" name="s">
@@ -60,8 +64,8 @@
                             <button id="cHint" class="reg btn blu">Hint</button>
                         </div>
                         <div id="cht" style="display: none;">
-                            <p>Divde 60 by the total amount of minutes each cycle takes!</p>
-                            <p>The number of cycles is 60 divided by 
+                            <p>Divide 60 minutes per hour by the total number of minutes each cycle takes!</p>
+                            <p>For my whale, the number of cycles in one hour is 60 minutes divided by 
                                 <input type="number" min="8" max="12" step="0.1" id="tc" name="tc">
                             </p>
                             <button id="hcHint" class="reg btn grn">Hide Hint</button>
@@ -79,8 +83,8 @@
                             <button id="kHint" class="reg btn blu">Hint</button>
                         </div>
                         <div id="kht" style="display: none;">
-                            <p>The speed of the whale is 1.5km times the amount of cycles in an hour!</p>
-                            <p>The speed of the whale in KM per HR is 1.5 times 
+                            <p>The speed of the whale is 1.5km per hour times the number of cycles in an hour!</p>
+                            <p>For my whale, the speed of the whale in KM per HR is 1.5 times 
                                 <input type="number" min="4" max="8" step="0.1" id="kph" name="kph">
                             </p>
                             <button id="hkHint" class="reg btn grn">Hide Hint</button>
@@ -88,7 +92,12 @@
                     </td>
                 </tr>
             </table>
-            <span><a href="speedInfo.html"><button id="speedInfo" class="reg btn blu">About Swimming Speed...</button></a></span>
+            <table>
+                <tr>
+                    <td><span><button id="home" class="reg btn grn">Continue with Set Up</button></span></td>
+                    <td class="right"><span><a href="speedInfo.html"><button id="speedInfo" class="reg btn blu">About Swimming Speed...</button></a></span></td>
+                </tr>
+            </table> 
         </div>
     </div>
 </body>
