@@ -150,6 +150,7 @@ button {
 .info {
     background-color: white;
     border: black 2px solid;
+    padding: 10px;
 }
 
 .grn {
@@ -184,4 +185,14 @@ button {
 .right {
     display: flex;
     justify-content: right;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.left {
+    display: flex;
+    justify-content: left;
 }
