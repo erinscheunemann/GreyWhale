@@ -26,7 +26,7 @@ window.addEventListener('load', function() {
         case 'n': // death by net
             netDeath.style.display = 'block';
             break;
-        case 'b': // death by net
+        case 'b': // death by ship strike
             boatDeath.style.display = 'block';
             break;
         case 't': // death durring de(t)our
