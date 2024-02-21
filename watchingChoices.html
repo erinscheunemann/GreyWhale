@@ -11,12 +11,16 @@
 </head>
 <body>
     <div id="content">
-        <div id="sim">
+        <div id="sim" style="text-align: center;">
             <h1>Choices Made by Boat Operators</h1>
             <p class="info">
                 Commercial and private boats are often used to watch migrating whales. 
                 The choices boat operators make determine the likelihood of harassment. 
                 Make some choices about the whale watchers that approach your whale.
+            </p>
+            <p>
+                Choose one item from each pair of choices
+                below by clicking on your choice
             </p>
             <div id="afirst" style="display: none;">
                 <p id="a1c">Stay 100 yards away and off to the side</p>
@@ -43,7 +47,10 @@
                 <p id="c2c">Do not make any sudden changes in speed or direction</p>
             </div>
             <span id="fSpan"><button id="fin" class="reg btn grn">Finished</button></span>
-            <span id="cs" style="display: none;"><a href="swim.html"><button class="reg btn grn">Continue Swimming?</button></a></span>
+            <div id="cs" style="display: none;">
+                <p>Your choices have caused you to <strong>lose <span id="dayslost"></span> day(s)</strong> on your journey!</p>
+                <a href="swim.html"><button class="reg btn grn">Continue Swimming?</button></a>
+            </div>
             <a href="whaleWatchingGuidelines.html"><button class="reg btn blu">Whale Watching Guidelines</button></a>
         </div>
     </div>

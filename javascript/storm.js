@@ -21,13 +21,15 @@ window.addEventListener('load', function() {
     let clicked = false;
 
     // maps for windspeed and description on beaufort scale
-    let windspeed = new Map([[0,"0-1"],[1,"1-4"],[2,"5-8"],[3,"9-14"],[4,"15-20"],[5,"21-15"],
-    [6,"26-31"],[7,"32-37"],[8,"38-43"],[9,"44-54"],[10,"55-66"],[11,"67-71"],[12,"72+"]]);
-    let description = new Map([[0,"smoke rises vertically"],[1,"airsmoke drifts, tree leaves move"],
-    [2,"leaves rustle, wind can be felt"],[3,"leaves and twigs in motion"],[4,"small branches move"],
-    [5,"small trees with leaves sway"],[6,"wind whistles, large branches move"],[7,"whole trees move, difficult to walk"],
-    [8,"twigs break off of trees"],[9,"branches break, some damage to roots, trees uprooted, heavy building damage"],
-    [10,"considerable damage, widespread damage"],[11,"very rarely experienced"],[12,"severe damage"]]);
+    let windspeed = new Map([[0,"0"],[1,"1-3"],[2,"4-7"],[3,"8-12"],[4,"13-18"],[5,"19-24"],
+    [6,"25-31"],[7,"32-38"],[8,"39-46"],[9,"47-54"],[10,"55-60"],[11,"64-73"],[12,"74-95"]]);
+    let description = new Map([[0,"calm and smoke rises vertically"],[1,"wind motion visible in smoke"],
+    [2,"wind can be felt on exposed skin and leaves rustle"],[3,"leaves and smaller twigs in constant motion"],
+    [4,"dust and loose paper is raised and small branches begin to move."],[5,"smaller trees sway"],
+    [6,"large branches in motion, whistling heard in overhead wires, and umbrella use becomes difficult"],
+    [7,"whole trees in motion and some difficulty when walking in the wind"],[8,"twigs broken from trees and cars veer on road"],
+    [9,"light structural damage"],[10,"trees uprooted and considerable structural damage"],
+    [11,"widespread structural damage"],[12,"considerable and widespread damage to structures"]]);
     
     // event listeners to hide/show pages
     showBeau.addEventListener('click', function() {

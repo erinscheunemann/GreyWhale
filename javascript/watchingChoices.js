@@ -4,6 +4,8 @@ window.addEventListener("load", function() {
     // get button spans 
     let fSpan = document.getElementById('fSpan');
     let cs = document.getElementById('cs');
+    // get days lost span
+    let dl = document.getElementById('dayslost');
     // choices
     let choices = new Map([["a", false],["b", false],["c", false]]);
     // choice flags
@@ -57,8 +59,8 @@ window.addEventListener("load", function() {
             }
             sessionStorage.setItem("days", days+penalty); // add penatly to days traveled
             fSpan.style.display = 'none';
+            dl.innerHTML = penalty;
             cs.style.display = 'block';
-            // window.location.replace("swim.html");
         } else { // user still has choice to make
             alert("FINISH MAKING CHOICES");
         }
