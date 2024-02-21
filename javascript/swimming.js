@@ -24,7 +24,6 @@ window.addEventListener('load', function() {
     let ep = document.getElementById(e);
     ep.style.display = 'block'; // display point on map
     
-
     // set prog 
     setProgress();
 
@@ -81,6 +80,9 @@ window.addEventListener('load', function() {
         let totalTraveled = Number(sessionStorage.getItem('disTraveled'));
         let distance = Number(sessionStorage.getItem('distance'));
         let routeDecided = Number(sessionStorage.getItem('routeDecided'));
+        let puget = Number(sessionStorage.getItem('puget'));
+        let san = Number(sessionStorage.getItem('san'));
+        let los = Number(sessionStorage.getItem('los'));
         // check if journey is OVER
         if(totalTraveled >= distance && days <= 90) { // traveled the distance
             sessionStorage.setItem('outcome', 's'); // set outcome to success 
@@ -101,7 +103,8 @@ window.addEventListener('load', function() {
             window.location.replace('storm.html');
         } else if (diceRoll < 0.10 && totalTraveled >= 3000) { // killer whale
             window.location.replace('whaleEncounter.html');
-        } else if ((totalTraveled >= 3000 && totalTraveled < 4000) && (0.40 <= diceRoll && diceRoll < 0.50)) { // puget sound detour
+        } else if ((totalTraveled >= 3000 && totalTraveled < 4000) && (0.40 <= diceRoll && diceRoll < 0.50) && puget == 0) { // puget sound detour
+            sessionStorage.setItem("puget", 1);
             let diceRoll = Math.random(); // roll for death
             if (diceRoll <= 0.1) { // 10% chance of death
                 sessionStorage.setItem('outcome', 't'); // set outcome to tour death
@@ -113,7 +116,8 @@ window.addEventListener('load', function() {
             window.location.replace('feed2.html');
         } else if (diceRoll >= 0.15 && diceRoll < 0.22) { // killer whale
             window.location.replace('whaleEncounter.html');
-        } else if ((totalTraveled >= 4000 && totalTraveled < 5000) && (0.40 <= diceRoll && diceRoll < 0.50)) { // san fran detour
+        } else if ((totalTraveled >= 4000 && totalTraveled < 5000) && (0.40 <= diceRoll && diceRoll < 0.50) && san == 0) { // san fran detour
+            sessionStorage.setItem("san", 1);
             let diceRoll = Math.random(); // roll for death
             if (diceRoll <= 0.1) { // 10% chance of death
                 sessionStorage.setItem('outcome', 't'); // set outcome to tour death
@@ -125,7 +129,8 @@ window.addEventListener('load', function() {
             window.location.replace('whaleWatchers.html');
         } else if (totalTraveled <= 5000 && (0.22 <= diceRoll && diceRoll < 0.30)) { // fishing boats
             window.location.replace('boat.html');
-        } else if ((totalTraveled >= 5000 && totalTraveled <= 6000) && (0.40 <= diceRoll && diceRoll < 0.50)) { // los angeles detour
+        } else if ((totalTraveled >= 5000 && totalTraveled <= 6000) && (0.40 <= diceRoll && diceRoll < 0.50) && los == 0) { // los angeles detour
+            sessionStorage.setItem("los", 1);
             let diceRoll = Math.random(); // roll for death
             if (diceRoll <= 0.1) { // 10% chance of death
                 sessionStorage.setItem('outcome', 't'); // set outcome to tour death
