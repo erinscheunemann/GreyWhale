@@ -92,7 +92,7 @@ window.addEventListener('load', function() {
             window.location.replace('result.html');
         }
         // channel route decision 
-        if (totalTraveled >= 9200 && routeDecided == 0) {
+        if (totalTraveled >= 8200 && routeDecided == 0) {
             sessionStorage.setItem('routeDecided', 1);
             window.location.replace('channel.html');
         }

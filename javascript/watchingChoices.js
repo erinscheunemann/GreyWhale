@@ -12,7 +12,10 @@ window.addEventListener("load", function() {
     let flags = new Map([["a", false],["b", false],["c", false]]);
     // questions 
     let questions = new Map([["ac", null],["aw", null],["bc", null],
-                            ["bw", null],["cc", null],["cw", null],]);
+                            ["bw", null],["cc", null],["cw", null]]);
+
+    let qLables = new Map([["acl", null],["awl", null],["bcl", null],
+                            ["bwl", null],["ccl", null],["cwl", null]]);
     // question divs
     let questionDivs = new Map([["aFirst", document.getElementById("afirst")],
                             ["bFirst", document.getElementById("bfirst")],
@@ -30,10 +33,14 @@ window.addEventListener("load", function() {
             questionDivs.get(q+'First').style.display = 'block';
             questions.set(q+'c', document.getElementById(q+'1c'));
             questions.set(q+'w', document.getElementById(q+'1w'));
+            qLables.set(q+'cl', document.getElementById(q+'1clabel'));
+            qLables.set(q+'wl', document.getElementById(q+'1wlabel'));
         } else { // wrong answer first
             questionDivs.get(q+'Second').style.display = 'block';
             questions.set(q+'c', document.getElementById(q+'2c'));
             questions.set(q+'w', document.getElementById(q+'2w'));
+            qLables.set(q+'cl', document.getElementById(q+'2clabel'));
+            qLables.set(q+'wl', document.getElementById(q+'2wlabel'));
         }
         questions.get(q+'c').addEventListener("click", choice);
         questions.get(q+'w').addEventListener("click", choice);
@@ -47,15 +54,15 @@ window.addEventListener("load", function() {
             let penalty = 0;
             if(choices.get('a')) { // got a wrong
                 penalty += 1;
-                questions.get('aw').style.color = 'red';
+                qLables.get('awl').style.color = 'red';
             }
             if(choices.get('b')) { // got b wrong
                 penalty += 1;
-                questions.get('bw').style.color = 'red';
+                qLables.get('bwl').style.color = 'red';
             }
             if(choices.get('c')) { // got c wrong
                 penalty += 1;
-                questions.get('cw').style.color = 'red';
+                qLables.get('cwl').style.color = 'red';
             }
             sessionStorage.setItem("days", days+penalty); // add penatly to days traveled
             fSpan.style.display = 'none';
@@ -70,8 +77,8 @@ window.addEventListener("load", function() {
     function choice() {
         let prefix = this.id.charAt(0);
         let answer = this.id.charAt(2);
-        let correct = questions.get(prefix+'c');
-        let wrong = questions.get(prefix+'w');
+        let correct = qLables.get(prefix+'cl');
+        let wrong = qLables.get(prefix+'wl');
         if(answer == 'c') {
             correct.style.color = "green";
             wrong.style.color = "black";

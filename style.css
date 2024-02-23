@@ -46,6 +46,7 @@ body {
     justify-content: space-around;
     border: black 10px ridge;
     position: relative;
+    padding: 10px;
     /* position: fixed;
     top: 50%;
     left: 50%;
@@ -54,14 +55,15 @@ body {
 }
 
 #progBar {
-    width: 960px;
-    margin: 25px 0px;
-    background-color: #33CC66;
-    border: black 10px ridge;
+    width: 900px;
+    margin: auto;
+    padding: 10px;
+    background-color:lightgreen;
+    border: black 5px ridge;
 }
 
 .progress-bar {
-    width: 800px;
+    width: 700px;
     height: 25px;
     margin: 10px auto;
     background-color: aliceblue;
