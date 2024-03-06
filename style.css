@@ -13,45 +13,33 @@ body {
     height:100%;
     margin: 0px auto;
     padding: 0px;
-    border-color: black;
-    border-style: double;
-    border-width: 0px 10px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 #content {
     background-color:greenyellow;
     color: black;
-    /* width: 800px;
-    height: 600px; */
     width: 960px;
     height: 800px;
-    /* centers the div on the screen */
-    /* position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
 }
 
 #sim {
     width: 100%;
     height: 100%;
-    /* width: 800px;
-    height: 600px; */
     width: 960px;
     height: 800px;
     background-color: #99CCCC;
+    /* add padding and then account for padding when centering */
+    padding: 25px;
+    translate: -25px -25px;
     /* evenly spaces out content on page */
     display: flex; 
     flex-direction: column; 
     justify-content: space-around;
-    border: black 10px ridge;
+    border: black 5px ridge;
     position: relative;
-    padding: 10px;
-    /* position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 10px; */
 }
 
 #progBar {
