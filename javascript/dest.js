@@ -22,6 +22,7 @@ window.addEventListener('load', function(){
 
     // PLACE AREAS/LABELS/POINTS/INFO ON IMAGE 
     let image = document.getElementById("image");
+    let div = document.getElementById("img");
     let w = image.width;
     let h = image.height;
     
@@ -29,8 +30,8 @@ window.addEventListener('load', function(){
     remap(guerrero, 0.25, 0.44, w, h);
     remap(scammon, 0.35, 0.47, w, h);
     remap(ignacio, 0.50, 0.52, w, h);
-    remap(magdalena, 0.73, 0.60, w, h);
-    remap(vavaros, 0.80, 0.77, w, h);
+    remap(magdalena, 0.72, 0.68, w, h);
+    remap(vavaros, 0.80, 0.85, w, h);
 
     // MARK POINT IF END IS NOT NULL
     if (dst != null) {
@@ -50,12 +51,16 @@ window.addEventListener('load', function(){
         // place point
         point.style.top = t + "px"; 
         point.style.left = l + "px";
-        // place info at bottom right of point
-        info.style.top = b + "px";
-        info.style.left = r + "px";
         // place label to the left of point
         label.style.top = t + "px";
         label.style.left = (l - label.offsetWidth - 5) + "px";
+        // place info at bottom right of point
+        info.style.top = b + "px";
+        info.style.left = r + "px";
+        // account for offset of image from edge
+        let offset = Math.round((div.offsetWidth - image.offsetWidth)/2);
+        l = l - offset;
+        r = r - offset;
         // place area on top of point
         area.coords = String(l)+","+String(t)+","+String(r)+","+String(b);
     }
