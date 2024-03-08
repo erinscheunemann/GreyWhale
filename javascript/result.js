@@ -9,6 +9,11 @@ window.addEventListener('load', function() {
     // get buttons
     let restart = document.getElementById('restart');
     let quit = document.getElementById('quit');
+    let keep = document.getElementById('keep');
+    let clear = document.getElementById('clear');
+    // get first and second choice divs
+    let first = document.getElementById('firstChoice');
+    let second = document.getElementById('secondChoice');
 
     // set what div is displayed 
     // do when logic for success is done on swimming 
@@ -37,7 +42,30 @@ window.addEventListener('load', function() {
 
     // restart game
     restart.addEventListener('click', function() {
+        first.style.display = 'none';
+        second.style.display = 'block';
+    });
+
+    clear.addEventListener('click', function() {
         sessionStorage.clear(); // clear all for a clean slate
+    });
+
+    keep.addEventListener('click', function() {
+        let kmph = sessionStorage.getItem('ogKMPH');
+        let start = sessionStorage.getItem('start');
+        let end = sessionStorage.getItem('end');
+        let f = sessionStorage.getItem("first");
+        let s = sessionStorage.getItem("second");
+        let t = sessionStorage.getItem("third");
+        sessionStorage.clear(); // clear all for a clean slate
+        // reset starting items
+        sessionStorage.setItem('kmph', kmph);
+        sessionStorage.setItem('start', start);
+        sessionStorage.setItem('end', end);
+        sessionStorage.setItem('first', f);
+        sessionStorage.setItem('second', s);
+        sessionStorage.setItem('third', t);
+        sessionStorage.setItem('kmphCorrect', 1); // store correctness
     });
 
     // quit game 

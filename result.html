@@ -62,18 +62,32 @@
                 </p>
                 <p>You have not survived your migration. You can start again or quit.</p>
             </div>
-            <table style="width: 100%; text-align: center;">
-                <tr>
-                    <td>
-                        <a href="index.html"><button id="restart" class="lrg btn grn">Begin a New Migration</button></a>
-                    </td>
-                    <td>
-                        <span><button id="quit" class="lrg btn grn">Quit Electronic Whale</button></span>
-                    </td>
-                </tr>
-            </table>
-            
-            
+            <div id="firstChoice">
+                <table style="width: 100%; text-align: center;">
+                    <tr>
+                        <td>
+                            <span><button id="restart" class="lrg btn grn">Begin a New Migration</button></span>
+                        </td>
+                        <td>
+                            <span><button id="quit" class="lrg btn grn">Quit Electronic Whale</button></span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="secondChoice" style="display: none;">
+                <h4>Wait a Minute...</h4>
+                <p>Before you can start you're new journey do you want to...</p>
+                <table style="width: 100%; text-align: center;">
+                    <tr>
+                        <td>
+                            <a href="index.html"><button id="keep" class="lrg btn grn">Begin With the Same Choices</button></a>
+                        </td>
+                        <td>
+                            <a href="index.html"><button id="clear" class="lrg btn grn">Begin With New Choices</button></a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
         </div>
     </div>
 </body>

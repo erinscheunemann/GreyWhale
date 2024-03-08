@@ -207,7 +207,8 @@ window.addEventListener('load', function() {
         sessionStorage.setItem("third", Number(tdd.value));
         sessionStorage.setItem("total", Number(total.value));
         sessionStorage.setItem("cycles", Number(cycles.value));
-        sessionStorage.setItem("kmph", Number(kmph.value));
+        sessionStorage.setItem("kmph", Number(kmph.value)); // for the game
+        sessionStorage.setItem("ogKMPH", Number(kmph.value)); // for restart
     }
 });
 
