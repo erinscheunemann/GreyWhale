@@ -16,6 +16,18 @@ window.addEventListener('load', function() {
     // get paragraph for progress bar
     let final = document.getElementById("final");
 
+    // get divs for detour points
+    let ps = this.document.getElementById("ps");
+    let sf = this.document.getElementById("sf");
+    let la = this.document.getElementById("la");
+    // show/hide label
+    ps.addEventListener('mouseenter', showLabel);
+    ps.addEventListener('mouseleave', hideLabel);
+    sf.addEventListener('mouseenter', showLabel);
+    sf.addEventListener('mouseleave', hideLabel);
+    la.addEventListener('mouseenter', showLabel);
+    la.addEventListener('mouseleave', hideLabel);
+
     // put points on map
     let s = sessionStorage.getItem("start");
     let sp = document.getElementById(s);
@@ -33,6 +45,20 @@ window.addEventListener('load', function() {
     dtgSpan.innerHTML = Number(sessionStorage.getItem('distance')) - Number(sessionStorage.getItem('disTraveled'));
     speedSpan.innerHTML = sessionStorage.getItem('kmph');
     
+
+    // show div by setting display = block
+    function showLabel(e) {
+        let labelDiv = document.getElementById(this.id+"Label");
+        labelDiv.style.display = 'block';
+    }
+
+    // hide div by setting display = none
+    function hideLabel(e) {
+        let labelDiv = document.getElementById(this.id+"Label");
+        labelDiv.style.display = 'none';
+    }
+
+
     function migrateAnimation(p ,pChange) {
         let id = null;
         let end = p + pChange; // add the percentage traveled
