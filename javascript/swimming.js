@@ -123,75 +123,102 @@ window.addEventListener('load', function() {
             window.location.replace('channel.html');
         }
 
-        let diceRoll = Math.random(); // roll for event
-        // events 
-        if (diceRoll < 0.10 && totalTraveled < 3000) { // storm  
-            window.location.replace('storm.html');
-        } else if (diceRoll < 0.10 && totalTraveled >= 3000) { // killer whale
-            window.location.replace('whaleEncounter.html');
-        } else if ((totalTraveled >= 3000 && totalTraveled < 4000) && (0.40 <= diceRoll && diceRoll < 0.50) && puget == 0) { // puget sound detour
-            sessionStorage.setItem("puget", 1);
-            let diceRoll = Math.random(); // roll for death
-            if (diceRoll <= 0.1) { // 10% chance of death
-                sessionStorage.setItem('outcome', 't'); // set outcome to tour death
-                window.location.replace('result.html'); // go to results
-            } else { // detour
-            window.location.replace('pugetsound.html');
-            }
-        } else if (diceRoll >= 0.10 && diceRoll < 0.15) { // feed along migration
-            window.location.replace('feed2.html');
-        } else if (diceRoll >= 0.15 && diceRoll < 0.22) { // killer whale
-            window.location.replace('whaleEncounter.html');
-        } else if ((totalTraveled >= 4000 && totalTraveled < 5000) && (0.40 <= diceRoll && diceRoll < 0.50) && san == 0) { // san fran detour
-            sessionStorage.setItem("san", 1);
-            let diceRoll = Math.random(); // roll for death
-            if (diceRoll <= 0.1) { // 10% chance of death
-                sessionStorage.setItem('outcome', 't'); // set outcome to tour death
-                window.location.replace('result.html'); // go to results
-            } else { // detour
-            window.location.replace('sanfrancisco.html');
-            }
-        } else if (totalTraveled > 5000 && (0.22 <= diceRoll && diceRoll < 0.30)) { // whale watchers
-            window.location.replace('whaleWatchers.html');
-        } else if (totalTraveled <= 5000 && (0.22 <= diceRoll && diceRoll < 0.30)) { // fishing boats
-            window.location.replace('boat.html');
-        } else if ((totalTraveled >= 5000 && totalTraveled <= 6000) && (0.40 <= diceRoll && diceRoll < 0.50) && los == 0) { // los angeles detour
-            sessionStorage.setItem("los", 1);
-            let diceRoll = Math.random(); // roll for death
-            if (diceRoll <= 0.1) { // 10% chance of death
-                sessionStorage.setItem('outcome', 't'); // set outcome to tour death
-                window.location.replace('result.html'); // go to results
-            } else { // detour
-            window.location.replace('losangeles.html');
-            }
-        } else if (totalTraveled <= 10000 && (0.30 <= diceRoll && diceRoll < 0.40)) { // frieghters and tankers
-            window.location.replace('freightersTankers.html');
-        } else { // no event? SWIM
-            speedSpan.innerHTML = sessionStorage.getItem('kmph');
-            // add 4 days to journey time
-            sessionStorage.setItem('days', days+4);
-            daySpan.innerHTML = days+4;
-            // calculate how many kms were traveled by speed * 4 * 24
-            let kmTraveled = Number(sessionStorage.getItem('kmph'))*4*24;
-            distSpan.innerHTML = Math.round(totalTraveled+kmTraveled);
-            sessionStorage.setItem('disTraveled', totalTraveled+kmTraveled);
-            dtgSpan.innerHTML = Math.round(Number(sessionStorage.getItem('distance')) - Number(sessionStorage.getItem('disTraveled')));
-            // check success 
-            if ((totalTraveled+kmTraveled) >= distance && days+4 <= 90) {
-                sessionStorage.setItem('outcome', 's');
-                window.location.replace('result.html');
-            } else if (days+4 >= 90) {
-                sessionStorage.setItem('outcome', 'p');
-                window.location.replace('result.html');
-            }
-            
-            // calculate percentage journeyed 
-            let percentTraveled = Math.round(kmTraveled/distance*100);
-            // call the migrate animation function with that percentage change 
-            migrateAnimation(Number(sessionStorage.getItem('progress')), percentTraveled);
-            // set progress bars 
-            setProgress();
+        // FOR TESTING WHALE PATH
+        speedSpan.innerHTML = sessionStorage.getItem('kmph');
+        // add 4 days to journey time
+        sessionStorage.setItem('days', days+4);
+        daySpan.innerHTML = days+4;
+        // calculate how many kms were traveled by speed * 4 * 24
+        let kmTraveled = Number(sessionStorage.getItem('kmph'))*4*24;
+        distSpan.innerHTML = Math.round(totalTraveled+kmTraveled);
+        sessionStorage.setItem('disTraveled', totalTraveled+kmTraveled);
+        dtgSpan.innerHTML = Math.round(Number(sessionStorage.getItem('distance')) - Number(sessionStorage.getItem('disTraveled')));
+        // check success 
+        if ((totalTraveled+kmTraveled) >= distance && days+4 <= 90) {
+            sessionStorage.setItem('outcome', 's');
+            window.location.replace('result.html');
+        } else if (days+4 >= 90) {
+            sessionStorage.setItem('outcome', 'p');
+            window.location.replace('result.html');
         }
+        
+        // calculate percentage journeyed 
+        let percentTraveled = Math.round(kmTraveled/distance*100);
+        // call the migrate animation function with that percentage change 
+        migrateAnimation(Number(sessionStorage.getItem('progress')), percentTraveled);
+        // set progress bars 
+        setProgress();
+
+        // COMMENTED OUT FOR TESTING!!!!
+        // let diceRoll = Math.random(); // roll for event
+        // // events 
+        // if (diceRoll < 0.10 && totalTraveled < 3000) { // storm  
+        //     window.location.replace('storm.html');
+        // } else if (diceRoll < 0.10 && totalTraveled >= 3000) { // killer whale
+        //     window.location.replace('whaleEncounter.html');
+        // } else if ((totalTraveled >= 3000 && totalTraveled < 4000) && (0.40 <= diceRoll && diceRoll < 0.50) && puget == 0) { // puget sound detour
+        //     sessionStorage.setItem("puget", 1);
+        //     let diceRoll = Math.random(); // roll for death
+        //     if (diceRoll <= 0.1) { // 10% chance of death
+        //         sessionStorage.setItem('outcome', 't'); // set outcome to tour death
+        //         window.location.replace('result.html'); // go to results
+        //     } else { // detour
+        //     window.location.replace('pugetsound.html');
+        //     }
+        // } else if (diceRoll >= 0.10 && diceRoll < 0.15) { // feed along migration
+        //     window.location.replace('feed2.html');
+        // } else if (diceRoll >= 0.15 && diceRoll < 0.22) { // killer whale
+        //     window.location.replace('whaleEncounter.html');
+        // } else if ((totalTraveled >= 4000 && totalTraveled < 5000) && (0.40 <= diceRoll && diceRoll < 0.50) && san == 0) { // san fran detour
+        //     sessionStorage.setItem("san", 1);
+        //     let diceRoll = Math.random(); // roll for death
+        //     if (diceRoll <= 0.1) { // 10% chance of death
+        //         sessionStorage.setItem('outcome', 't'); // set outcome to tour death
+        //         window.location.replace('result.html'); // go to results
+        //     } else { // detour
+        //     window.location.replace('sanfrancisco.html');
+        //     }
+        // } else if (totalTraveled > 5000 && (0.22 <= diceRoll && diceRoll < 0.30)) { // whale watchers
+        //     window.location.replace('whaleWatchers.html');
+        // } else if (totalTraveled <= 5000 && (0.22 <= diceRoll && diceRoll < 0.30)) { // fishing boats
+        //     window.location.replace('boat.html');
+        // } else if ((totalTraveled >= 5000 && totalTraveled <= 6000) && (0.40 <= diceRoll && diceRoll < 0.50) && los == 0) { // los angeles detour
+        //     sessionStorage.setItem("los", 1);
+        //     let diceRoll = Math.random(); // roll for death
+        //     if (diceRoll <= 0.1) { // 10% chance of death
+        //         sessionStorage.setItem('outcome', 't'); // set outcome to tour death
+        //         window.location.replace('result.html'); // go to results
+        //     } else { // detour
+        //     window.location.replace('losangeles.html');
+        //     }
+        // } else if (totalTraveled <= 10000 && (0.30 <= diceRoll && diceRoll < 0.40)) { // frieghters and tankers
+        //     window.location.replace('freightersTankers.html');
+        // } else { // no event? SWIM
+        //     speedSpan.innerHTML = sessionStorage.getItem('kmph');
+        //     // add 4 days to journey time
+        //     sessionStorage.setItem('days', days+4);
+        //     daySpan.innerHTML = days+4;
+        //     // calculate how many kms were traveled by speed * 4 * 24
+        //     let kmTraveled = Number(sessionStorage.getItem('kmph'))*4*24;
+        //     distSpan.innerHTML = Math.round(totalTraveled+kmTraveled);
+        //     sessionStorage.setItem('disTraveled', totalTraveled+kmTraveled);
+        //     dtgSpan.innerHTML = Math.round(Number(sessionStorage.getItem('distance')) - Number(sessionStorage.getItem('disTraveled')));
+        //     // check success 
+        //     if ((totalTraveled+kmTraveled) >= distance && days+4 <= 90) {
+        //         sessionStorage.setItem('outcome', 's');
+        //         window.location.replace('result.html');
+        //     } else if (days+4 >= 90) {
+        //         sessionStorage.setItem('outcome', 'p');
+        //         window.location.replace('result.html');
+        //     }
+            
+        //     // calculate percentage journeyed 
+        //     let percentTraveled = Math.round(kmTraveled/distance*100);
+        //     // call the migrate animation function with that percentage change 
+        //     migrateAnimation(Number(sessionStorage.getItem('progress')), percentTraveled);
+        //     // set progress bars 
+        //     setProgress();
+        // }
     }
 
     let contButton = document.getElementById('cs');
