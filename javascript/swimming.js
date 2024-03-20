@@ -105,6 +105,7 @@ window.addEventListener('load', function() {
         let days = Number(sessionStorage.getItem('days'));
         let totalTraveled = Number(sessionStorage.getItem('disTraveled'));
         let distance = Number(sessionStorage.getItem('distance'));
+        let speed = Number(sessionStorage.getItem('kmph'));
         let routeDecided = Number(sessionStorage.getItem('routeDecided'));
         let puget = Number(sessionStorage.getItem('puget'));
         let san = Number(sessionStorage.getItem('san'));
