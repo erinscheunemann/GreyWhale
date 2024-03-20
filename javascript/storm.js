@@ -52,7 +52,7 @@ window.addEventListener('load', function() {
         bfn.innerHTML = severity;
         ws.innerHTML = windspeed.get(severity);
         bfd.innerHTML = description.get(severity);
-        let dl = Math.round(severity/2); // lose half the severity in days
+        let dl = Math.trunc(Math.round(severity/2)); // lose half the severity in days
         daysLost.innerHTML = dl;
         let days = Number(sessionStorage.getItem('days'));
         sessionStorage.setItem('days', days+dl);
