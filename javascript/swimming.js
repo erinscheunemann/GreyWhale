@@ -105,20 +105,20 @@ window.addEventListener('load', function() {
         let days = Number(sessionStorage.getItem('days'));
         let totalTraveled = Number(sessionStorage.getItem('disTraveled'));
         let distance = Number(sessionStorage.getItem('distance'));
-        let speed = Number(sessionStorage.getItem('kmph'));
+        let speed = Math.trunc(Math.round(Number(sessionStorage.getItem('kmph'))));
         let routeDecided = Number(sessionStorage.getItem('routeDecided'));
         let puget = Number(sessionStorage.getItem('puget'));
         let san = Number(sessionStorage.getItem('san'));
         let los = Number(sessionStorage.getItem('los'));
         // check if journey is OVER
         if(totalTraveled >= distance && days <= 90) { // traveled the distance
-            sessionStorage.setItem('outcome', 's'); // set outcome to success 
+            sessionStorage.setItem('outcome', 's'); // set outcome to success
             window.location.replace('result.html');
         } else if (days >= 90) { // traveled more than 90 days
             sessionStorage.setItem('outcome', 'p'); // set outcome to pass
             window.location.replace('result.html');
         }
-        // channel route decision 
+        // channel route decision
         if (totalTraveled >= 8200 && routeDecided == 0) {
             sessionStorage.setItem('routeDecided', 1);
             window.location.replace('channel.html');
@@ -139,7 +139,7 @@ window.addEventListener('load', function() {
             } else { // detour
             window.location.replace('pugetsound.html');
             }
-        } else if (diceRoll >= 0.10 && diceRoll < 0.15) { // feed along migration
+        } else if (diceRoll >= 0.10 && diceRoll < 0.15 && speed < 12) { // feed along migration
             window.location.replace('feed2.html');
         } else if (diceRoll >= 0.15 && diceRoll < 0.22) { // killer whale
             window.location.replace('whaleEncounter.html');
