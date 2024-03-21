@@ -139,7 +139,7 @@ window.addEventListener('load', function() {
             } else { // detour
             window.location.replace('pugetsound.html');
             }
-        } else if (diceRoll >= 0.10 && diceRoll < 0.15 && speed < 12) { // feed along migration
+        } else if (diceRoll >= 0.10 && diceRoll < 0.15) { // feed along migration
             window.location.replace('feed2.html');
         } else if (diceRoll >= 0.15 && diceRoll < 0.22) { // killer whale
             window.location.replace('whaleEncounter.html');
@@ -185,13 +185,14 @@ window.addEventListener('load', function() {
                 sessionStorage.setItem('outcome', 'p');
                 window.location.replace('result.html');
             }
+        
+            // calculate percentage journeyed 
+            let percentTraveled = Math.round(kmTraveled/distance*100);
+            // call the migrate animation function with that percentage change 
+            migrateAnimation(Number(sessionStorage.getItem('progress')), percentTraveled);
+            // set progress bars 
+            setProgress();
         }
-        // calculate percentage journeyed 
-        let percentTraveled = Math.round(kmTraveled/distance*100);
-        // call the migrate animation function with that percentage change 
-        migrateAnimation(Number(sessionStorage.getItem('progress')), percentTraveled);
-        // set progress bars 
-        setProgress();
     }
 
     let contButton = document.getElementById('cs');

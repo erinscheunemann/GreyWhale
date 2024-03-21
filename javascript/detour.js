@@ -1,11 +1,17 @@
 window.addEventListener('load', function() {
     // get continue swimming button
     let btn = document.getElementById('cs');
+    // get span for all speed stuff
+    let eat = document.getElementById("eat");
     // get span for increase
     let inc = document.getElementById("inc");
     // get speed and days
     let speed = Number(sessionStorage.getItem('kmph'));
     let days = Number(sessionStorage.getItem('days'));
+
+    if(speed >= 12) { // dont change speed if speed is 12
+        eat.style.display = "none";
+    }
 
     // set increase
     let increase = 0.5;
