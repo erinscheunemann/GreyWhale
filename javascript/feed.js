@@ -6,6 +6,7 @@ window.addEventListener('load', function (){
     btn.addEventListener('click', function () {
         // amount speed increases by
         let increase = 0.5;
+        let incText = "";
         // add speed and time taken
         // get days, speed, and total increase
         let days = Number(sessionStorage.getItem('days')); 
@@ -13,7 +14,8 @@ window.addEventListener('load', function (){
         let kmphIncrease = Number(sessionStorage.getItem("kmphIncrease"));
         // check if increase will reach max speed of 12
         if (speed + increase >= 12) {
-            increase = 12 - speed; // do some rounding because js SUCKS TODO
+            increase = 12 - speed;
+            incText = String(increase).slice(0,3); // sort of rounding
             document.getElementById("continue").style.display = "none";
             document.getElementById("stop").style.display = "block";
         }

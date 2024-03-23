@@ -18,6 +18,7 @@ window.addEventListener('load', function (){
     function eat() {
         // amount speed increases by
         let increase = 0.5;
+        let incText = "";
         // add speed and time taken
         // get days, speed, and total increase
         let days = Number(sessionStorage.getItem('days')); 
@@ -25,7 +26,8 @@ window.addEventListener('load', function (){
         let kmphIncrease = Number(sessionStorage.getItem("kmphIncrease"));
         // check if increase will reach max speed of 12
         if (speed + increase >= 12) {
-            increase = 12 - speed; // do some rounding because js SUCKS TODO
+            increase = 12 - speed; 
+            incText = String(increase).slice(0,3); // sort of rounding
             document.getElementById("continue").style.display = "none";
             document.getElementById("stop").style.display = "block";
         }
@@ -34,7 +36,7 @@ window.addEventListener('load', function (){
         sessionStorage.setItem('kmphIncrease', kmphIncrease+increase);
         // display in paragraph
         info.innerHTML = "So far, you have taken " + (days+4) +
-                        " days to eat and have <strong>increased</strong> your speed by <strong>" + (kmphIncrease+increase) +
+                        " days to eat and have <strong>increased</strong> your speed by <strong>" + incText +
                         " KMPH</strong> to <strong>" + (speed+increase) + " KMPH</strong>."
     }
 });

@@ -9,11 +9,13 @@ window.addEventListener('load', function (){
 
     // set increase
     let increase = 0.5;
+    let incText = "";
     // check if increase will reach max speed of 12
     if (speed + increase >= 12) {
         increase = 12 - speed;
+        incText = String(increase).slice(0,3); // sort of rounding
     }
-    inc.innerHTML = increase;
+    inc.innerHTML = incText;
     
 
     btn.addEventListener('click', function() {
