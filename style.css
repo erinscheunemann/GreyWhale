@@ -193,8 +193,19 @@ button {
 }
 
 .dot {
-    
     font-weight:bolder;
     color: red;
     font-size: xxx-large;
+}
+
+.x-bar {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    /* font-family:'Times New Roman', Times, serif; */
+    font-weight:bolder;
+    color: black;
+    font-size: xx-large;
+}
+
+.name-bar {
+    font-size: x-small;
 }

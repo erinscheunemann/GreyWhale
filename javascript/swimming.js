@@ -11,9 +11,12 @@ window.addEventListener('load', function() {
     let daysProg = document.getElementById("daysProg");
     let distanceProg = document.getElementById("distanceProg");
     let daysText = document.getElementById("dpt");
+    let daysText2 = document.getElementById("dpt2");
     let distanceText = document.getElementById("kmpt");
+    let distanceText2 = document.getElementById("kmpt2");
 
-    // get paragraph for progress bar
+    // get td for progress bar
+    let start = document.getElementById("start");
     let final = document.getElementById("final");
 
     // get divs for detour points
@@ -27,6 +30,10 @@ window.addEventListener('load', function() {
     sf.addEventListener('mouseleave', hideLabel);
     la.addEventListener('mouseenter', showLabel);
     la.addEventListener('mouseleave', hideLabel);
+
+    // map to hold distances for calculations
+    let startName = new Map([['siberian', "Siberian Coast"], ['chukchi', "Chukchi Sea"], ['barrow', "Point Barrow"]]);
+    let endName = new Map([['guerrero', "Guerrero Negro Lagoon"], ['scammon', "Scammon's Lagoon"], ['ignacio', "San Ignacio Lagoon"], ['magdalena', "Magdalena Bay"], ['vavaros', "Yavaros, Sonora"]]);
 
     // put points on map
     let s = sessionStorage.getItem("start");
@@ -85,9 +92,14 @@ window.addEventListener('load', function() {
         daysProg.style.backgroundColor = hsl_col_perc(percentDaysTraveled, 100, 0); 
         distanceProg.style.width = percentKMTraveled + "%";
         distanceProg.style.backgroundColor = hsl_col_perc(percentKMTraveled, 0, 100);
-        daysText.innerHTML = percentDaysTraveled + "%"; // change text to match progress
-        distanceText.innerHTML = percentKMTraveled + "%";
-        final.innerHTML = totalDistance + " KM"; // change end KM in case of route decisions
+        daysText.innerHTML = days + " (" + percentDaysTraveled + "%)"; // change text to match progress
+        daysText2.innerHTML = (90-days);
+        distanceText.innerHTML = distance + " km (" + percentKMTraveled + "%)";
+        distanceText2.innerHTML = totalDistance-distance + " km";
+        start.innerHTML = "<p class=\"x-bar\">X</p>"
+                            + "<p class=\"name-bar\">" + startName.get(s) + "</p>";
+        final.innerHTML =  "<p class=\"x-bar\">X</p>"
+                            + "<p class=\"name-bar\">" + endName.get(e) + "</p>"; // change end KM in case of route decisions
     }
 
     function hsl_col_perc(percent, start, end) { // from https://stackoverflow.com/questions/7128675/from-green-to-red-color-depend-on-percentage
