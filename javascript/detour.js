@@ -15,7 +15,7 @@ window.addEventListener('load', function() {
 
     // set increase
     let increase = 0.5;
-    let incText = "";
+    let incText = "0.5";
     // check if increase will reach max speed of 12
     if (speed + increase >= 12) {
         increase = 12 - speed;

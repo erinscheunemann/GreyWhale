@@ -6,7 +6,7 @@ window.addEventListener('load', function (){
     btn.addEventListener('click', function () {
         // amount speed increases by
         let increase = 0.5;
-        let incText = "";
+        let incText = "0.5";
         // add speed and time taken
         // get days, speed, and total increase
         let days = Number(sessionStorage.getItem('days')); 

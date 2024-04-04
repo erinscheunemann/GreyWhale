@@ -18,7 +18,7 @@ window.addEventListener('load', function (){
     function eat() {
         // amount speed increases by
         let increase = 0.5;
-        let incText = "";
+        let incText = "0.5";
         // add speed and time taken
         // get days, speed, and total increase
         let days = Number(sessionStorage.getItem('days')); 
@@ -30,7 +30,8 @@ window.addEventListener('load', function (){
             incText = String(increase).slice(0,3); // sort of rounding
             document.getElementById("continue").style.display = "none";
             document.getElementById("stop").style.display = "block";
-        }
+        } else
+        
         sessionStorage.setItem('days', days+4);
         sessionStorage.setItem('kmph', speed+increase);
         sessionStorage.setItem('kmphIncrease', kmphIncrease+increase);
