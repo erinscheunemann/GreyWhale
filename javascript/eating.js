@@ -36,8 +36,8 @@ window.addEventListener('load', function (){
         sessionStorage.setItem('kmph', speed+increase);
         sessionStorage.setItem('kmphIncrease', kmphIncrease+increase);
         // display in paragraph
-        info.innerHTML = "So far, you have taken " + (days+4) +
-                        " days to eat and have <strong>increased</strong> your speed by <strong>" + incText +
+        info.innerHTML = "So far, you have <strong>taken " + (days+4) +
+                        " days</strong> to eat and have <strong>increased</strong> your speed by <strong>" + incText +
                         " KMPH</strong> to <strong>" + (speed+increase) + " KMPH</strong>."
     }
 });
