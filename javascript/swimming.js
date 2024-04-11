@@ -151,7 +151,7 @@ window.addEventListener('load', function() {
             } else { // detour
             window.location.replace('pugetsound.html');
             }
-        } else if (diceRoll >= 0.10 && diceRoll < 0.15) { // feed along migration
+        } else if ((diceRoll >= 0.10 && diceRoll < 0.15) && speed < 12) { // feed along migration
             window.location.replace('feed2.html');
         } else if (diceRoll >= 0.15 && diceRoll < 0.22) { // killer whale
             window.location.replace('whaleEncounter.html');
@@ -190,10 +190,10 @@ window.addEventListener('load', function() {
             sessionStorage.setItem('disTraveled', totalTraveled+kmTraveled);
             dtgSpan.innerHTML = Math.trunc(Math.round(Number(sessionStorage.getItem('distance')) - Number(sessionStorage.getItem('disTraveled'))));
             // check success 
-            if ((totalTraveled+kmTraveled) >= distance && days+4 <= 90) {
+            if (Math.round(totalTraveled+kmTraveled) >= distance && (days+4) <= 90) {
                 sessionStorage.setItem('outcome', 's');
                 window.location.replace('result.html');
-            } else if (days+4 >= 90) {
+            } else if ((days+4) >= 90) {
                 sessionStorage.setItem('outcome', 'p');
                 window.location.replace('result.html');
             }
