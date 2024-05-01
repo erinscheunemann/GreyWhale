@@ -94,8 +94,8 @@ window.addEventListener('load', function() {
         distanceProg.style.backgroundColor = hsl_col_perc(percentKMTraveled, 0, 100);
         daysText.innerHTML = days + " (" + percentDaysTraveled + "%)"; // change text to match progress
         daysText2.innerHTML = (90-days);
-        distanceText.innerHTML = distance + " km (" + percentKMTraveled + "%)";
-        distanceText2.innerHTML = totalDistance-distance + " km";
+        distanceText.innerHTML = Math.trunc(Math.round(distance)) + " km (" + percentKMTraveled + "%)";
+        distanceText2.innerHTML = Math.trunc(Math.round(totalDistance-distance)) + " km";
         start.innerHTML = "<p class=\"x-bar\">X</p>"
                             + "<p class=\"name-bar\">" + startName.get(s) + "</p>";
         final.innerHTML =  "<p class=\"x-bar\">X</p>"

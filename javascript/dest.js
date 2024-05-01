@@ -27,11 +27,11 @@ window.addEventListener('load', function(){
     let h = image.height;
     
     
-    remap(guerrero, 0.25, 0.44, w, h);
-    remap(scammon, 0.35, 0.47, w, h);
-    remap(ignacio, 0.50, 0.52, w, h);
-    remap(magdalena, 0.72, 0.68, w, h);
-    remap(vavaros, 0.80, 0.85, w, h);
+    remap(guerrero, 0.25, 0.33, w, h);
+    remap(scammon, 0.36, 0.36, w, h);
+    remap(ignacio, 0.48, 0.43, w, h);
+    remap(magdalena, 0.73, 0.56, w, h);
+    remap(vavaros, 0.81, 0.79, w, h);
 
     // MARK POINT IF END IS NOT NULL
     if (dst != null) {

@@ -22,9 +22,9 @@ window.addEventListener('load', function(){
 
     
 
-    remap(siberian, 0.02, 0.45, w, h);
-    remap(chukchi, 0.08, 0.50, w, h);
-    remap(barrow, 0.02, 0.67, w, h);
+    remap(siberian, 0.02, 0.32, w, h);
+    remap(chukchi, 0.08, 0.39, w, h);
+    remap(barrow, 0.02, 0.56, w, h);
 
     // MARK POINT IF START IS NOT NULL
     if (strt != null) {
